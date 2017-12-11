@@ -1,6 +1,6 @@
-# togeball_front
+# poker
 
-> 微约球前端部分
+> 基于vue的扑克游戏
 
 ## Build Setup
 

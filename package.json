@@ -1,7 +1,7 @@
 {
   "name": "togeball_front",
   "version": "1.0.0",
-  "description": "微约球前端部分",
+  "description": "基于vue的扑克游戏",
   "author": "sunhongjian <sunhj@huntor.cn>",
   "private": true,
   "scripts": {
