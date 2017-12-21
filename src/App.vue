@@ -22,6 +22,11 @@ export default {
       });
     }
   },
+  sockets: {
+    connect_error() {
+      alert('网络连接异常');
+    },
+  },
   methods: {
     ...mapMutations(['LOGIN_SUCCESS']),
   },
