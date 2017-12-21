@@ -11,7 +11,9 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'room',
   sockets: {
-
+    hello(data) {
+      alert(data.msg);
+    },
   },
   created() {
     this.roomId = this.$route.params.id;

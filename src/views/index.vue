@@ -4,7 +4,14 @@
       <span class="pointer" @click="createRoom">创建房间</span>
     </div>
     <div class="center-flex">
-      <span class="pointer">加入房间</span>
+      <div>
+        <div style="margin-bottom: 30px">
+          <input type="text" placeholder="请输入房间号" v-model="roomId">
+        </div>
+        <div>
+          <span class="pointer" @click="joinRoom">加入房间</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,13 +33,20 @@ export default {
   },
   data() {
     return {
-
+      roomId: '',
     };
   },
   methods: {
     createRoom() {
       this.$socket.emit('createRoom', this.userId, (data) => {
         this.$router.push({ name: 'Room', params: { id: data } });
+      });
+    },
+    joinRoom() {
+      this.$socket.emit('joinRoom', { roomId: this.roomId }, (data) => {
+        if (data.code === '0') {
+          this.$router.push({ name: 'Room', params: { id: data.id } });
+        }
       });
     },
   },
