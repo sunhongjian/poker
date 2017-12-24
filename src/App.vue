@@ -24,7 +24,7 @@ export default {
   },
   sockets: {
     connect_error() {
-      alert('网络连接异常');
+      console.log('网络连接异常');
     },
   },
   methods: {

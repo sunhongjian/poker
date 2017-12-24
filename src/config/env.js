@@ -5,7 +5,7 @@ let socketUrl = '';
 let serviceUrl = '';
 if (process.env.NODE_ENV === 'development') {
   socketUrl = 'localhost:3000';
-  serviceUrl = 'localhost:3000/api';
+  serviceUrl = 'http://localhost:3000/api';
 }
 
 
