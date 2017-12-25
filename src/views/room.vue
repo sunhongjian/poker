@@ -3,6 +3,12 @@
     <h2>房间号{{roomId}}</h2>
     <h3>房间信息:</h3>
     <div>房主: {{roomInfoData.createUserId}}</div>
+    <h3>参与玩家</h3>
+    <ul>
+      <li v-for="(player,index) in roomInfoData.players" :key="index">
+        {{player.id}}
+      </li>
+    </ul>
     <div>
       <li v-for="(item,index) in joinRoomTips" :key="index">
         {{item.msg}}
