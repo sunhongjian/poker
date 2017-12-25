@@ -39,13 +39,19 @@ export default {
   methods: {
     createRoom() {
       this.$socket.emit('createRoom', this.userId, (data) => {
-        this.$router.push({ name: 'Room', params: { id: data } });
+        this.roomId = data;
+        this.joinRoom();
       });
     },
     joinRoom() {
-      this.$socket.emit('joinRoom', { roomId: this.roomId }, (data) => {
+      this.$socket.emit('joinRoom', {
+        playerId: this.userId,
+        roomId: this.roomId,
+      }, (data) => {
         if (data.code === '0') {
           this.$router.push({ name: 'Room', params: { id: data.id } });
+        } else {
+          alert('创建房间失败');
         }
       });
     },
